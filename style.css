@@ -1,0 +1,290 @@
+/* custom styles */
+:root {
+
+    --clr-orange: hsl(35, 77%, 62%);
+    --clr-red: hsl(5, 85%, 63%);
+
+    --clr-off-white: hsl(36, 100%, 99%);
+    --clr-blue-300: hsl(233, 8%, 79%);
+    --clr-blue-400: hsl(236, 13%, 42%);
+    --clr-blue-500: hsl(240, 100%, 5%);
+
+    --ff-base: [Inter];
+    --fs-base: 0.9375rem;
+
+    --screen-sm: 375px;
+    --screen-lg: 1440px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+body {
+    color: var(--clr-blue-500);
+    overflow-x: hidden;
+    background: var(--clr-off-white);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button {
+    display: block;
+    outline: 0;
+    border: 0;
+    background: transparent;
+}
+
+.container {
+    padding: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 1rem;
+}
+
+.logo-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.main-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    width: 200px;
+    height: 100%;
+
+    padding-inline: 2rem;
+    padding-top: 4rem;
+
+    background: #FFF;
+    z-index: 9;
+}
+
+li {
+    font-weight: 700;
+}
+
+li:hover {
+    color: var(--clr-orange);
+}
+
+#close-menu {
+    font-weight: 600;
+}
+
+#open-menu {
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid red; */
+}
+
+.line {
+    position: relative;
+    background: black;
+
+    height: 3px;
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+.line::before,
+.line::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    background: black;
+}
+
+.line::before {
+    bottom: 7px;
+}
+
+.line::after {
+    bottom: -7px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 50px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.hero-title {
+    font-weight: 800;
+    font-size: 3rem;
+    margin-block: 1rem;
+}
+
+.hero-info {
+    font-size: 1.125rem;
+    color: var(--clr-blue-400);
+    font-weight: 500;
+}
+
+.news {
+    padding: 20px;
+
+    background: var(--clr-blue-500);
+
+    color: var(--clr-off-white);
+}
+
+.new-title {
+    color: var(--clr-orange);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.news-title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.news-title:hover {
+    color: var(--clr-orange);
+}
+
+.news-item:not(:last-child) {
+    margin-block: 1.5rem;
+}
+
+.news-info {
+    color: var(--clr-blue-300);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+}
+
+.card-item {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 120px;
+    gap: 10px;
+}
+
+.card-img {
+    height: 100%;
+}
+
+.card-num {
+    font-weight: 800;
+    color: var(--clr-blue-400);
+    font-size: 2rem;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-block: 5px;
+}
+
+.card-info {
+    color: var(--clr-blue-400);
+    font-weight: 500;
+}
+
+@media (min-width: 40rem) {
+    body {
+        display: grid;
+        place-items: center;
+        height: 100svh;
+    }
+
+    header {
+        align-items: center;
+    }
+
+    .main-list {
+        position: static;
+        flex-direction: row;
+        gap: 2.5rem;
+
+        width: fit-content;
+        height: fit-content;
+
+        padding: 0;
+    }
+
+    #close-menu {
+        display: none;
+    }
+
+    #open-menu {
+        display: none;
+    }
+
+    .container {
+        padding: 40px;
+        width: 95%;
+        max-width: 1200px;
+    }
+
+    .grid-container {
+        grid-template-columns: 70% auto;
+        gap: 20px;
+    }
+
+    .hero-text {
+        display: grid;
+        grid-template-columns: 60% auto;
+        place-items: center;
+        gap: 20px;
+    }
+
+
+    .hero-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(3, 33%);
+        gap: 32px;
+        grid-column: 1/-1;
+    }
+
+    .card-item {
+        grid-template-columns: 40% auto;
+        width: fit-content;
+    }
+}
